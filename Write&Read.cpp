@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
-
+#include "Write&Read.hpp"
 const std::string FILE_NAME = "data.txt";
 
 
@@ -48,8 +48,10 @@ void Load(std::ifstream &file ,
     if(file.is_open())
     {
         std::cout << "Success";
+        //allegedly eof runs it to end of file not sure if and how it works
         while(file.eof())
         {
+            // good chance this code crashes must be tested publish branch compile this and main.cpp to test loading and saving
             std::string Read_User;
             std::string Read_Id;
             std::getline(file,Read_User);
