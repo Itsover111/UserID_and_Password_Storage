@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <unordered_map>
-#include <utility>
+
 #include "Write&Read.hpp"
 const std::string FILE_NAME = "data.txt";
 
