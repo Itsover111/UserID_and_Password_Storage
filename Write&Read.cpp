@@ -5,7 +5,7 @@ std::string Name;
 std::string Id;
 
 void Save(std::ofstream &file, 
-    std::unordered_map<std::string , std::string> map)
+    std::unordered_map<std::string , std::string>& map)
 {
     file.open("data.txt");
     if(!file.is_open())
@@ -19,10 +19,8 @@ void Save(std::ofstream &file,
         std::cout<<"success";
         for(const auto& pair : map)
         {
-            file << pair.first;
-            file << "\n";
-            file << pair.second;
-            file << "\n";
+            file << pair.first << "\n";
+            file << pair.second << "\n";
         }
     }
 
@@ -31,7 +29,7 @@ void Save(std::ofstream &file,
 }
 
 void Load(std::ifstream &file , 
-    std::unordered_map<std::string , std::string> map)
+    std::unordered_map<std::string , std::string>& map)
 {
     std::string Name;
     std::string Id;

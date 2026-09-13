@@ -3,6 +3,9 @@
 #include "Write&Read.hpp"
 
 
+std::unordered_map<std::string , std::string> KEYVALUEPAIR_STORAGE {};
+std::ifstream into_file{"data.txt"};
+std::ofstream outof_file{"data.txt", std::ios::app};
 
 int main ()
 {
@@ -14,5 +17,6 @@ int main ()
     std::cout<<"\nEnter Password: ";
     std::cin>>id;
 
-    addPair(&user , &id);
+    addPair(user , id , KEYVALUEPAIR_STORAGE);
+    Save(outof_file, KEYVALUEPAIR_STORAGE);
 }
