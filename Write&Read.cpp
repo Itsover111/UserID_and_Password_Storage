@@ -13,15 +13,13 @@ void Save(std::ofstream &file,
         std::cerr<<"error";
         return;
     }
-
-    if(file.is_open())
+    std::cout<<"success";
+    for(const auto& pair : map)
     {
-        std::cout<<"success";
-        for(const auto& pair : map)
-        {
-            file << pair.first << "\n";
-            file << pair.second << "\n";
-        }
+        std::cout << "Writing " << pair.first << "&" << pair.second;
+        file << pair.first << "\n";
+        file << pair.second << "\n";
+        std::cout << "Success";
     }
 
     file.close();
