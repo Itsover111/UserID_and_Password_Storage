@@ -1,10 +1,11 @@
 
 #include "Write&Read.hpp"
 const std::string FILE_NAME = "data.txt";
-
+std::string Name;
+std::string Id;
 
 void Save(std::ofstream &file, 
-    std::unordered_map<std::string , std::string>* map)
+    std::unordered_map<std::string , std::string> map)
 {
     file.open("data.txt");
     if(!file.is_open())
@@ -16,11 +17,11 @@ void Save(std::ofstream &file,
     if(file.is_open())
     {
         std::cout<<"success";
-        for(const auto& [Name, Id] : *map)
+        for(const auto& pair : map)
         {
-            file << Name;
+            file << pair.first;
             file << "\n";
-            file << Id;
+            file << pair.second;
             file << "\n";
         }
     }
@@ -30,7 +31,7 @@ void Save(std::ofstream &file,
 }
 
 void Load(std::ifstream &file , 
-    std::unordered_map<std::string , std::string>* map)
+    std::unordered_map<std::string , std::string> map)
 {
     std::string Name;
     std::string Id;
@@ -53,7 +54,7 @@ void Load(std::ifstream &file ,
             std::getline(file,Read_User);
             std::getline(file, Read_Id,'&');
             
-            (*map).insert(Read_User , Read_Id);
+            (map)[Read_User] = Read_Id;
         }
     }
 }

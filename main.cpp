@@ -15,5 +15,4 @@ int main ()
     std::cin>>id;
 
     addPair(&user , &id);
-    Save()
 }
