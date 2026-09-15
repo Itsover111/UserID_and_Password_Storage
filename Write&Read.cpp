@@ -1,13 +1,17 @@
 
 #include "Write&Read.hpp"
 const std::string FILE_NAME = "data.txt";
+
 std::string Name;
 std::string Id;
+
+std::string Read_User;
+std::string Read_Id;
 
 void Save(std::ofstream &file, 
     std::unordered_map<std::string , std::string>& map)
 {
-    file.open("data.txt");
+    file.open("data.txt" , std::ios::out);
     if(!file.is_open())
     {
         std::cerr<<"error";
@@ -31,7 +35,7 @@ void Load(std::ifstream &file ,
 {
     std::string Name;
     std::string Id;
-    file.open("data.txt");
+    file.open("data.txt" , std::ios::app);
     if(!file.is_open())
     {
         std::cerr << "error";
@@ -42,11 +46,10 @@ void Load(std::ifstream &file ,
     {
         std::cout << "Success";
         //allegedly eof runs it to end of file not sure if and how it works
-        while(file.eof())
+        while(getline(file,Read_User))
         {
             // good chance this code crashes must be tested publish branch compile this and main.cpp to test loading and saving
-            std::string Read_User;
-            std::string Read_Id;
+            
             std::getline(file,Read_User);
             std::getline(file, Read_Id,'&');
             
