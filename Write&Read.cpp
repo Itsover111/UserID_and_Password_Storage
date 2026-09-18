@@ -1,4 +1,4 @@
-
+#include "ReadFile.hpp"
 #include "Write&Read.hpp"
 const std::string FILE_NAME = "data.txt";
 
@@ -54,4 +54,18 @@ void Load(std::ifstream &file ,
             (map)[Read_User] = Read_Id;
         }
     }
+}
+
+
+void GenerateData()
+{
+    
+    for(size_t i = 0 ; i < 10000 ; i++)
+    {
+        std::string Id = std::to_string(i);
+        std::string Password = std::to_string(i/2);
+        
+        addPair(Id , Password , KEYVALUEPAIR_STORAGE);
+    }
+    return;
 }

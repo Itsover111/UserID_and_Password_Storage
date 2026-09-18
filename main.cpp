@@ -9,15 +9,9 @@ std::ofstream outof_file{"data.txt", std::ios::app};
 
 int main ()
 {
+    
     Load(into_file,KEYVALUEPAIR_STORAGE);
-    std::string user{};
-    std::string id{};
-
-    std::cout<<"Enter UserName: ";
-    std::cin>>user;
-    std::cout<<"\nEnter Password: ";
-    std::cin>>id;
-
-    addPair(user , id , KEYVALUEPAIR_STORAGE);
-    Save(outof_file, KEYVALUEPAIR_STORAGE);
+    std::string x{};
+    std::cin >> x;
+    LookUpName(&x , KEYVALUEPAIR_STORAGE);
 }
