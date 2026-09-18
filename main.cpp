@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "ReadFile.hpp"
 #include "Write&Read.hpp"
 
@@ -13,5 +14,5 @@ int main ()
     Load(into_file,KEYVALUEPAIR_STORAGE);
     std::string x{};
     std::cin >> x;
-    LookUpName(&x , KEYVALUEPAIR_STORAGE);
+    LookUpName(x , KEYVALUEPAIR_STORAGE);
 }

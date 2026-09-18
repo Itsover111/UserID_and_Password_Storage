@@ -13,6 +13,6 @@ extern std::ofstream outof_file;
 void addPair(std::string& Name , std::string& Id , 
     std::unordered_map<std::string , std::string>& MapRef);
 
-void LookUpName(std::string* Name, std::unordered_map<std::string 
+void LookUpName(std::string& Name, std::unordered_map<std::string 
     , std::string>& MapRef);
 
