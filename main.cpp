@@ -9,6 +9,7 @@ std::ofstream outof_file{"data.txt", std::ios::app};
 
 int main ()
 {
+    Load(into_file,KEYVALUEPAIR_STORAGE);
     std::string user{};
     std::string id{};
 
@@ -17,7 +18,6 @@ int main ()
     std::cout<<"\nEnter Password: ";
     std::cin>>id;
 
-    Load(into_file,KEYVALUEPAIR_STORAGE);
     addPair(user , id , KEYVALUEPAIR_STORAGE);
     Save(outof_file, KEYVALUEPAIR_STORAGE);
 }

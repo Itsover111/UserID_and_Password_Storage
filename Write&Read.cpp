@@ -20,10 +20,8 @@ void Save(std::ofstream &file,
     std::cout<<"success";
     for(const auto& pair : map)
     {
-        std::cout << "Writing " << pair.first << "&" << pair.second;
         file << pair.first << "\n";
         file << pair.second << "\n";
-        std::cout << "Success";
     }
 
     file.close();
